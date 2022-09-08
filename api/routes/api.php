@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -42,4 +44,12 @@ Route::group([
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/refresh', [AuthController::class, 'refresh']);
     Route::get('/user-profile', [AuthController::class, 'userProfile']);
+    //product api
+    Route::post('/product/add', [ProductController::class, 'store']);
+    Route::get('/test', [ProductController::class, 'getCategories']);
+    Route::get('/images/productId/{productId}', [ProductController::class, 'getProductImages']);
+
+    //category api
+    Route::post('/category/add', [CategoryController::class, 'store']);
+    Route::get('/category/all', [CategoryController::class, 'getAll']);
 });

@@ -3,6 +3,7 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import axios from "axios";
 const Login = () => {
+    document.body.classList.add('login-register-page');
     const onFinish = async  (values) => {
         const response = await axios.post(
             'http://localhost:8000/api/auth/register',
@@ -50,7 +51,7 @@ const Login = () => {
 
                         <Form.Item
                             label="Username"
-                            name="username"
+                            name="name"
                             rules={[
                                 {
                                     required: true,

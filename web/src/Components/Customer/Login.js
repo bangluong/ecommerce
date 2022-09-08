@@ -1,18 +1,24 @@
 import { Button, Checkbox, Form, Input } from 'antd';
 import React from 'react';
-import 'antd/dist/antd.css';
 import axios from "axios";
-import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 const Login = () => {
-    const navigate=useNavigate();
+    document.body.classList.add('login-register-page');
+    const navigate = useNavigate();
     const onFinish = async  (values) => {
         const response = await axios.post(
             'http://127.0.0.1:8000/api/auth/login',
             values,
             { headers: { 'Content-Type': 'application/json' } }
-        )
-        console.log(response.data)
+        );
+        if (response.data.status === 200) {
+            const StorageKeys = {
+                'user' : response.data.user,
+                'access_token': response.data.access_token,
+            }
+            localStorage.setItem('customer', JSON.stringify(StorageKeys));
+            navigate('/');
+        }
     };
 
     const onFinishFailed = (errorInfo) => {
