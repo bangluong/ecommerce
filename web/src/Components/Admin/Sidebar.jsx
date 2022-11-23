@@ -27,9 +27,11 @@ const items = [
     getItem(renderLink('Dashboard', '/'), '1', <DashboardOutlined />),
     getItem('Catalog', 'sub1', <LayoutOutlined />, [
         getItem(renderLink('Products', '/products'), '2', '', [
-            getItem(renderLink('Add new', 'products/add'), '3')
+            getItem(renderLink('Add new', 'http://localhost:3000/products/add'), '3')
         ]),
-        getItem('Categories', '4'),
+        getItem(renderLink('Categories', '/categories'), '3', '', [
+            getItem(renderLink('Add new', 'http://localhost:3000/categories/add'), '4')
+        ]),
     ]),
     getItem('Sales', 'sub2', <DollarOutlined />, [
         getItem(renderLink('Orders', '/orders'), '5'),

@@ -17,7 +17,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $category = new Category();
-        $category->name = $request->name;
+        $category->name = $request->category_name;
         $category->banner = $request->banner;
         $category->description = $request->description;
         try {
@@ -29,7 +29,8 @@ class CategoryController extends Controller
         } catch (Exception $exception) {
             $message = 'somethings when wrong while saving your data';
             return response()->json([
-                'error'=>$exception,
+                'data'=> $category,
+                'error'=>$exception->getMessage(),
                 'status'=> 'error',
                 'message'=>$message
             ]);

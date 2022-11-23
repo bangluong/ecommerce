@@ -12,6 +12,7 @@ import ProductForm from "./Components/Admin/Catalog/Product/Ui_component/Form";
 import SideBar from './Components/Admin/Sidebar';
 import AdminFooter from "./Components/Admin/AdminFooter";
 import {Breadcrumb, Layout} from 'antd';
+import CategoryForm from "./Components/Admin/Catalog/Category/Ui_component/Form";
 
 const {Header, Content} = Layout;
 
@@ -40,6 +41,7 @@ function App() {
             <Route element={<PrivateRoutes/>}>
                 <Route path='/' element={<Dashboard/>}/>
                 <Route path={'/products/add'} element={AdminLayout(<ProductForm/>)}></Route>
+                <Route path={'/categories/add'} element={AdminLayout(<CategoryForm/>)}></Route>
             </Route>
             <Route path='/login' element={<Login/>}/>
             <Route path='/register' element={<Register/>}/>

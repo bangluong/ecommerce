@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="144d8a48-0f21-4b1c-a487-a6c0a171a5ff" name="v532app">
+        <fileTransfer rootFolder="/home/v532app" accessType="SFTP" host="139.162.31.74" port="2222" sshConfigId="e619fda9-ca42-4b20-aab3-2e7a06e69888" sshConfig="v532app@139.162.31.74:2222 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
